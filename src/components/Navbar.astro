@@ -1,0 +1,77 @@
+---
+---
+
+<nav>
+  <ul aria-label='Primary' role='list'>
+    <li><a href='/about/' class='button'>About</a></li>
+    <li><a href='/FAQ/' class='button'>FAQ</a></li>
+    <li>
+      <a href='/' class='logo'
+        ><img
+          src='public/poco-logo.png'
+          alt='poco logo which links to the home page'
+        /></a
+      >
+    </li>
+    <li><a href='#' class='button' data-type='inverted'>Discord</a></li>
+    <li><a href='#' class='button' data-type='inverted'>Contact</a></li>
+  </ul>
+</nav>
+
+<style lang='scss'>
+  nav {
+    color: white;
+    background: hsl(203, 100%, 51%);
+    text-align: center;
+    padding: 0.5rem;
+    box-shadow: 0 3px 8px rgba(0, 0, 0, 0.25);
+  }
+
+  ul {
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+    margin: 0 9em;
+  }
+
+  img {
+    height: 100px;
+    border: solid 2px red;
+  }
+
+  .button {
+    display: inline-block;
+    position: static;
+    font-size: 1.25rem;
+    padding: 0.5em 1.5em;
+    background: hsl(203, 96%, 43%);
+    border-radius: 0.875rem;
+    border: solid 1px rgba(0, 0, 0, 0.159);
+    color: white;
+    text-decoration: none;
+    font-weight: 700;
+    transition: all 50ms linear;
+    &:hover {
+      transform: rotate(-6deg);
+      background: hsl(203, 100%, 38%);
+      box-shadow: 2px 4px 0 #0047ff;
+      border: solid 2px black;
+    }
+  }
+
+  .button:active {
+    background-color: rgb(68, 68, 68);
+    padding: 0.45em 1.45em;
+  }
+
+  .button[data-type="inverted"]:hover {
+    transform: rotate(6deg);
+    background: hsl(203, 100%, 38%);
+    box-shadow: 2px 4px 0 #0047ff;
+    border: solid 2px black;
+    &:active {
+      background-color: rgb(68, 68, 68);
+      padding: 0.45em 1.45em;
+    }
+  }
+</style>
