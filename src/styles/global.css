@@ -1,6 +1,5 @@
 :root {
-  --ff-primary: Segoe UI, Frutiger, Frutiger Linotype, Dejavu Sans,
-    Helvetica Neue, Arial, sans-serif;
+  --ff-primary: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
 
   --ff-body: var(--ff-primary);
   --ff-heading: var(--ff-primary);

@@ -8,7 +8,7 @@
     <li>
       <a href='/' class='logo'
         ><img
-          src='public/poco-logo.png'
+          src='/poco-logo.png'
           alt='poco logo which links to the home page'
         /></a
       >
@@ -19,9 +19,13 @@
 </nav>
 
 <style lang='scss'>
+  :root {
+    --clr-poco-blue: #0099ff;
+  }
+
   nav {
     color: white;
-    background: hsl(203, 100%, 51%);
+    background: var(--clr-poco-blue);
     text-align: center;
     padding: 0.5rem;
     box-shadow: 0 3px 8px rgba(0, 0, 0, 0.25);
@@ -31,12 +35,11 @@
     display: flex;
     justify-content: space-evenly;
     align-items: center;
-    margin: 0 9em;
+    margin: 0 20em;
   }
 
   img {
-    height: 100px;
-    border: solid 2px red;
+    max-height: 100px;
   }
 
   .button {
