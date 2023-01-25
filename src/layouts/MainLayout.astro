@@ -1,0 +1,22 @@
+---
+import Navbar from "../components/Navbar.astro";
+import "../styles/global.css";
+import Header from "../components/Header.astro";
+import { SITE_TITLE, SITE_DESCRIPTION } from "../config";
+import BaseHead from "../components/BaseHead.astro";
+import Footer from "../components/Footer.astro";
+---
+
+<!DOCTYPE html>
+<html lang='en'>
+  <head>
+    <BaseHead title={SITE_TITLE} description={SITE_DESCRIPTION} />
+  </head>
+  <body>
+    <Navbar />
+    <Header />
+    <slot />
+    <h3 id='blog'>Blog Area</h3>
+    <Footer />
+  </body>
+</html>

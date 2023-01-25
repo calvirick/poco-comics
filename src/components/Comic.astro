@@ -11,14 +11,17 @@ import comic from "../images/comics/01-01-concussion.png";
         “Blah Blah Emporium 2.0 Blah Blah Emporium 2.0 Blah Blah Emporium 2.0. ”
       </span>
     </div>
-    <button class='blog-button'>👇🏻</button>
+    <button
+      onclick="document.getElementById('blog').scrollIntoView();"
+      class='blog-button'>👇🏻</button
+    >
   </section>
-  <img
-    class='the-comic'
-    src={comic}
-    alt='the first comic about poco getting a concussion'
-  />
 </div>
+<img
+  class='the-comic'
+  src={comic}
+  alt='the first comic about poco getting a concussion'
+/>
 
 <style lang='scss'>
   .the-comic {
