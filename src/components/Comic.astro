@@ -2,6 +2,38 @@
 import comic from "../content/comics/01-01-concussion.webp";
 ---
 
+<script>
+  document.addEventListener("scroll", handleScroll)!;
+  // get a reference to our predefined button
+  var scrollToTopBtn = document.querySelector(".scrollToTopBtn")!;
+
+  function handleScroll() {
+    var scrollableHeight =
+      document.documentElement.scrollHeight -
+      document.documentElement.clientHeight;
+    var GOLDEN_RATIO = 0.1;
+
+    if (document.documentElement.scrollTop / scrollableHeight > GOLDEN_RATIO) {
+      //show button
+      if (!scrollToTopBtn.classList.contains("showScrollBtn"))
+        scrollToTopBtn.classList.add("showScrollBtn");
+    } else {
+      //hide button
+      if (scrollToTopBtn.classList.contains("showScrollBtn"))
+        scrollToTopBtn.classList.remove("showScrollBtn");
+    }
+  }
+
+  scrollToTopBtn.addEventListener("click", scrollToTop);
+
+  function scrollToTop() {
+    window.scrollTo({
+      top: 0,
+      behavior: "smooth",
+    });
+  }
+</script>
+
 <div class='comic-container'>
   <section class='top-section'>
     <div class='comic-info-container'>
@@ -22,11 +54,7 @@ import comic from "../content/comics/01-01-concussion.webp";
     src={comic}
     alt='the first comic about poco getting a concussion'
   />
-  <button
-    class='scroll-to-top-button'
-    onclick="document.getElementById('header').scrollIntoView();"
-    ><i class='fa-solid fa-arrow-up'></i></button
-  >
+  <button class='scrollToTopBtn'><i class='fa-solid fa-arrow-up'></i></button>
 </div>
 
 <style lang='scss'>
@@ -68,9 +96,7 @@ import comic from "../content/comics/01-01-concussion.webp";
     border: 1px solid #000000;
     box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.25);
     border-radius: 5px;
-    // arrow decoration
     font-size: medium;
-    font-weight: 700;
     transition: all 100ms ease-out;
     &:hover {
       transform: rotate(8deg);
@@ -79,30 +105,37 @@ import comic from "../content/comics/01-01-concussion.webp";
       background-color: #0099ff;
     }
   }
-  .scroll-to-top-button {
-    cursor: pointer;
+
+  .scrollToTopBtn {
     display: flex;
-    position: fixed;
-    bottom: 3.125rem;
-    right: 3.125rem;
-    z-index: 2;
     justify-content: center;
     align-items: center;
     width: 3.5rem;
     height: 3.5rem;
-    color: #fff;
     background: rgb(68, 68, 68);
+    color: #fff;
     border: 1px solid #000000;
     box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.25);
     border-radius: 5px;
-    // arrow decoration
     font-size: medium;
-    font-weight: 700;
+
+    cursor: pointer;
+    position: fixed;
+    bottom: 50px;
+    right: 50px;
+    transform: translateY(100px);
+    opacity: 0;
+    transition: all 100ms, opacity 0.3s;
     &:hover {
       transform: rotate(8deg);
     }
     &:active {
       background-color: #0099ff;
     }
+  }
+
+  .showScrollBtn {
+    transform: translateY(0);
+    opacity: 1;
   }
 </style>
