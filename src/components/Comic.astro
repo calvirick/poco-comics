@@ -1,5 +1,5 @@
 ---
-import comic from "../images/comics/01-01-concussion.png";
+import comic from "../content/comics/01-01-concussion.webp";
 ---
 
 <div class='comic-container'>
@@ -13,19 +13,24 @@ import comic from "../images/comics/01-01-concussion.png";
     </div>
     <button
       onclick="document.getElementById('blog').scrollIntoView();"
-      class='blog-button'>👇🏻</button
-    >
+      class='blog-button'
+      ><i class='fa-solid fa-arrow-down'></i>
+    </button>
   </section>
+  <img
+    class='the-comic'
+    src={comic}
+    alt='the first comic about poco getting a concussion'
+  />
+  <button
+    class='scroll-to-top-button'
+    onclick="document.getElementById('header').scrollIntoView();"
+    ><i class='fa-solid fa-arrow-up'></i></button
+  >
 </div>
-<img
-  class='the-comic'
-  src={comic}
-  alt='the first comic about poco getting a concussion'
-/>
 
 <style lang='scss'>
   .the-comic {
-    width: 500px;
     margin: auto;
   }
 
@@ -38,9 +43,7 @@ import comic from "../images/comics/01-01-concussion.png";
 
   .comic-info-container {
     height: auto;
-    width: 500px;
     margin: auto;
-    margin-right: 1rem;
     margin-bottom: 1.5rem;
   }
 
@@ -57,29 +60,44 @@ import comic from "../images/comics/01-01-concussion.png";
   .blog-button {
     cursor: pointer;
     display: flex;
-    flex-direction: column;
     justify-content: center;
     align-items: center;
-    gap: 10px;
-
-    width: 3.5rem;
+    width: 6.75rem;
     height: 3.5rem;
-
     background: #ffffff;
-
     border: 1px solid #000000;
-
     box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.25);
     border-radius: 5px;
-
     // arrow decoration
-    font-size: x-large;
-
-    flex: none;
-    order: 1;
-    flex-grow: 0;
-
+    font-size: medium;
+    font-weight: 700;
     transition: all 100ms ease-out;
+    &:hover {
+      transform: rotate(8deg);
+    }
+    &:active {
+      background-color: #0099ff;
+    }
+  }
+  .scroll-to-top-button {
+    cursor: pointer;
+    display: flex;
+    position: fixed;
+    bottom: 3.125rem;
+    right: 3.125rem;
+    z-index: 2;
+    justify-content: center;
+    align-items: center;
+    width: 3.5rem;
+    height: 3.5rem;
+    color: #fff;
+    background: rgb(68, 68, 68);
+    border: 1px solid #000000;
+    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.25);
+    border-radius: 5px;
+    // arrow decoration
+    font-size: medium;
+    font-weight: 700;
     &:hover {
       transform: rotate(8deg);
     }
