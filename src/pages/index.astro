@@ -1,10 +1,10 @@
 ---
 import MainLayout from "../layouts/MainLayout.astro";
-import Comic from "../components/Comic.astro";
 import Header from "../components/Header.astro";
+import test from "@assets/01-01-concussion.webp";
 ---
 
 <MainLayout>
   <Header />
-  <Comic />
+  <img src={test} alt='this is a thing' />
 </MainLayout>
