@@ -7,8 +7,12 @@
   aria-label='Main navigation for comics'
 >
   <ul role='list' aria-label='Primary' role='list'>
-    <li role='listitem'><a href='/about' class='button'>About</a></li>
-    <li role='listitem'><a href='/FAQ' class='button'>FAQ</a></li>
+    <li class='list-hidden' role='listitem'>
+      <a href='/about' class='button'>About</a>
+    </li>
+    <li class='list-hidden' role='listitem'>
+      <a href='/FAQ' class='button'>FAQ</a>
+    </li>
     <li role='listitem'>
       <a href='/' class='logo'
         ><img
@@ -17,10 +21,10 @@
         /></a
       >
     </li>
-    <li role='listitem'>
+    <li class='list-hidden' role='listitem'>
       <a href='#' class='button' data-type='inverted'>Discord</a>
     </li>
-    <li role='listitem'>
+    <li class='list-hidden' role='listitem'>
       <a href='#' class='button' data-type='inverted'>Contact</a>
     </li>
   </ul>
@@ -84,6 +88,26 @@
     &:active {
       background-color: rgb(68, 68, 68);
       padding: 0.45em 1.45em;
+    }
+  }
+
+  @media (max-width: 50em) {
+    .blue-navbar {
+      background: red;
+      width: 100%;
+    }
+
+    ul {
+      display: block;
+    }
+
+    img {
+      display: inline-block;
+      width: 2rem;
+    }
+
+    .list-hidden {
+      display: none;
     }
   }
 </style>
