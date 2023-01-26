@@ -1,17 +1,16 @@
 ---
-import comic from "../content/comics/01-01-concussion.webp";
+import comic from "../images/published/01-01-concussion.webp";
 ---
 
 <script>
   document.addEventListener("scroll", handleScroll)!;
-  // get a reference to our predefined button
   var scrollToTopBtn = document.querySelector(".scrollToTopBtn")!;
 
   function handleScroll() {
     var scrollableHeight =
       document.documentElement.scrollHeight -
       document.documentElement.clientHeight;
-    var GOLDEN_RATIO = 0.1;
+    var GOLDEN_RATIO = 0.05;
 
     if (document.documentElement.scrollTop / scrollableHeight > GOLDEN_RATIO) {
       //show button
@@ -36,18 +35,18 @@ import comic from "../content/comics/01-01-concussion.webp";
 
 <div class='comic-container'>
   <section class='top-section'>
-    <div class='comic-info-container'>
-      <p>Published: 01-17-2023</p>
-      <strong class='comic-title'>Comic #01-</strong>
-      <span class='comic-description'>
-        “Blah Blah Emporium 2.0 Blah Blah Emporium 2.0 Blah Blah Emporium 2.0. ”
-      </span>
-    </div>
     <button
       onclick="document.getElementById('blog').scrollIntoView();"
       class='blog-button'
       ><i class='fa-solid fa-arrow-down'></i>
     </button>
+    <div class='comic-info-container'>
+      <p>Published: 01-17-2023</p>
+      <strong class='comic-title'>Comic #01-</strong>
+      <span class='comic-description'>
+        “Blah Emporium 2.0 Blah Blah Emporium 2.0 Blah Blah Emporium 2.0. ”
+      </span>
+    </div>
   </section>
   <img
     class='the-comic'
@@ -58,21 +57,27 @@ import comic from "../content/comics/01-01-concussion.webp";
 </div>
 
 <style lang='scss'>
+  .comic-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+  }
+
   .the-comic {
     margin: auto;
   }
 
   .top-section {
-    width: 500px;
     display: flex;
-    margin: auto;
+    flex-direction: row-reverse;
     margin-top: 3rem;
+    width: 31.25rem;
   }
 
   .comic-info-container {
-    height: auto;
-    margin: auto;
-    margin-bottom: 1.5rem;
+    margin: 1.75rem 0;
+    padding-right: 50px;
   }
 
   .comic-title {
@@ -87,10 +92,8 @@ import comic from "../content/comics/01-01-concussion.webp";
 
   .blog-button {
     cursor: pointer;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    width: 6.75rem;
+    position: absolute;
+    width: 3.5rem;
     height: 3.5rem;
     background: #ffffff;
     border: 1px solid #000000;
@@ -137,5 +140,34 @@ import comic from "../content/comics/01-01-concussion.webp";
   .showScrollBtn {
     transform: translateY(0);
     opacity: 1;
+  }
+
+  @media (max-width: 50em) {
+    .top-section {
+      display: flex;
+      justify-content: space-between;
+      margin-top: 3rem;
+      width: 355px;
+    }
+
+    .the-comic {
+      width: 355px;
+    }
+
+    .comic-info-container {
+      padding-right: 0;
+    }
+
+    .blog-button {
+      width: 2.75rem;
+      height: 2.75rem;
+    }
+
+    .scrollToTopBtn {
+      width: 3rem;
+      height: 3rem;
+      bottom: 20px;
+      right: 30px;
+    }
   }
 </style>

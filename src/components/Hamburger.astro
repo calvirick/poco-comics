@@ -1,0 +1,66 @@
+<script>
+  const primaryHeader = document.querySelector(".primary-header")!;
+  const navToggle = document.querySelector(".mobile-nav-toggle")!;
+  const primaryNav = document.querySelector(".primary-navigation")!;
+
+  navToggle.addEventListener("click", () => {
+    primaryNav.hasAttribute("data-visible")
+      ? navToggle.setAttribute("aria-expanded", false)
+      : navToggle.setAttribute("aria-expanded", true);
+    primaryNav.toggleAttribute("data-visible");
+    primaryHeader.toggleAttribute("data-overlay");
+  });
+</script>
+
+<button
+  class='mobile-nav-toggle'
+  aria-controls='primary-navigation'
+  aria-expanded='false'
+>
+  <i class='fa-solid fa-burger'></i>
+
+  <span class='visually-hidden'>Menu</span>
+</button>
+
+<style lang='scss'>
+  .mobile-nav-toggle {
+    display: none;
+  }
+
+  @media (max-width: 50em) {
+    .mobile-nav-toggle {
+      cursor: pointer;
+      display: block;
+      position: relative;
+      color: white;
+      background-color: #0087e1;
+      right: 0.5rem;
+      cursor: pointer;
+      border: 0;
+      font-size: 2rem;
+      padding: 0.25rem 0.75rem;
+      border: solid 1px #222;
+      border-radius: 5px;
+      box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.25);
+      transition: all 100ms ease-out;
+      &:hover {
+        transform: rotate(8deg);
+      }
+      &:active {
+        background-color: #0099ff;
+      }
+    }
+  }
+
+  .visually-hidden {
+    position: absolute;
+    width: 1px;
+    height: 1px;
+    padding: 0;
+    margin: -1px;
+    overflow: hidden;
+    clip: rect(0, 0, 0, 0);
+    white-space: nowrap; /* added line */
+    border: 0;
+  }
+</style>
