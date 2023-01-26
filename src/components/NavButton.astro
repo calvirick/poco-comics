@@ -1,0 +1,51 @@
+---
+export interface Props {
+  label: string;
+  href: string;
+  inverted?: string;
+}
+
+const { label, href = "/", inverted = false } = Astro.props;
+---
+
+<li class='list-hidden' role='listitem'>
+  <a href={href} class='button' data-type={inverted}>{label}</a>
+</li>
+
+<style lang='scss'>
+  .button {
+    display: inline-block;
+    position: static;
+    font-size: 1.25rem;
+    padding: 0.5em 1.5em;
+    background: hsl(203, 96%, 43%);
+    border-radius: 0.875rem;
+    border: solid 1px rgba(0, 0, 0, 0.159);
+    color: white;
+    text-decoration: none;
+    font-weight: 700;
+    transition: all 50ms linear;
+    &:hover {
+      transform: rotate(-6deg);
+      background: hsl(203, 100%, 38%);
+      box-shadow: 2px 4px 0 #0047ff;
+      border: solid 2px black;
+    }
+  }
+
+  .button:active {
+    background-color: rgb(68, 68, 68);
+    padding: 0.45em 1.45em;
+  }
+
+  .button[data-type="true"]:hover {
+    transform: rotate(6deg);
+    background: hsl(203, 100%, 38%);
+    box-shadow: 2px 4px 0 #0047ff;
+    border: solid 2px black;
+    &:active {
+      background-color: rgb(68, 68, 68);
+      padding: 0.45em 1.45em;
+    }
+  }
+</style>
