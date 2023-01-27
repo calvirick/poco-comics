@@ -1,4 +1,4 @@
-import { defineConfig } from 'astro/config';
+import { defineConfig } from "astro/config";
 
 // https://astro.build/config
 import mdx from "@astrojs/mdx";
@@ -7,6 +7,11 @@ import mdx from "@astrojs/mdx";
 import sitemap from "@astrojs/sitemap";
 
 // https://astro.build/config
+import netlify from "@astrojs/netlify/functions";
+
+// https://astro.build/config
 export default defineConfig({
-  integrations: [mdx(), sitemap()]
+  output: "server",
+  integrations: [mdx(), sitemap()],
+  adapter: netlify()
 });

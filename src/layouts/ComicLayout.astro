@@ -1,0 +1,22 @@
+---
+import MainLayout from "./MainLayout.astro";
+import Header from "../components/Header.astro";
+import Comic from "../components/Comic.astro";
+import Blog from "@components/Blog.astro";
+
+const { frontmatter } = Astro.props;
+---
+
+<MainLayout>
+  <Header />
+  <Comic
+    title={frontmatter.title}
+    publishDate={frontmatter.publishDate}
+    url={frontmatter.image.url}
+    alt={frontmatter.image.alt}
+    description={frontmatter.description}
+  />
+  <slot />
+</MainLayout>
+
+<style lang='scss'></style>

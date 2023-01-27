@@ -1,11 +1,12 @@
 ---
-title: "Comic #01"
-description: "Blah Blah Emporium 2.0"
-publishDate: 01-26-2023
+layout: "../../layouts/ComicLayout.astro"
+title: "Post 2"
+description: "We meet Poco and Gary for the first time."
+publishDate: 01-28-2023
 author: "Alex Wilkins"
 image:
-  src: "../images/published/01-01-concussion.webp"
-  alt: "The Astro logo with the word One."
+  url: "https://ik.imagekit.io/pococomics/poco-comics/tr:lo-true/01-01-concussion.webp"
+  alt: "Poco comic #1 Concussion."
 ---
 
 ### Blog Text Title Here:

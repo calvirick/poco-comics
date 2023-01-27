@@ -1,10 +1,19 @@
 ---
-import comic from "../images/published/01-01-concussion.webp";
+interface Props {
+  title: string;
+  url: string;
+  description: string;
+  publishDate: string;
+  alt: string;
+}
+
+const { title, url, description, publishDate, alt } = Astro.props;
 ---
 
 <script>
   document.addEventListener("scroll", handleScroll)!;
   var scrollToTopBtn = document.querySelector(".scrollToTopBtn")!;
+  var scrollToBottomBtn = document.querySelector(".blog-button")!;
 
   function handleScroll() {
     var scrollableHeight =
@@ -24,12 +33,16 @@ import comic from "../images/published/01-01-concussion.webp";
   }
 
   scrollToTopBtn.addEventListener("click", scrollToTop);
+  scrollToBottomBtn.addEventListener("click", scrollToBottom);
 
   function scrollToTop() {
     window.scrollTo({
       top: 0,
       behavior: "smooth",
     });
+  }
+  function scrollToBottom() {
+    window.scrollTo(0, document.body.scrollHeight);
   }
 </script>
 
@@ -41,18 +54,14 @@ import comic from "../images/published/01-01-concussion.webp";
       ><i class='fa-solid fa-arrow-down'></i>
     </button>
     <div class='comic-info-container'>
-      <p>Published: 01-17-2023</p>
-      <strong class='comic-title'>Comic #01-</strong>
+      <p>Published: {publishDate}</p>
+      <strong class='comic-title'>{title}-</strong>
       <span class='comic-description'>
-        “Blah Emporium 2.0 Blah Blah Emporium 2.0 Blah Blah Emporium 2.0. ”
+        {description}
       </span>
     </div>
   </section>
-  <img
-    class='the-comic'
-    src={comic}
-    alt='the first comic about poco getting a concussion'
-  />
+  <img class='the-comic' src={url} alt={alt} />
   <button class='scrollToTopBtn'><i class='fa-solid fa-arrow-up'></i></button>
 </div>
 
