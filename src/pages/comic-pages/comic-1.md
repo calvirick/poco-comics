@@ -5,7 +5,7 @@ description: "We meet Poco and Gary for the first time."
 publishDate: 01-27-2023
 author: "Alex Wilkins"
 image:
-  url: "/01-01-concussion.webp"
+  url: "https://ik.imagekit.io/pococomics/poco-comics/tr:lo-true/01-01-concussion.webp"
   alt: "Poco comic #1 Concussion."
 ---
 
