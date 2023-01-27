@@ -32,22 +32,18 @@ import NavButton from "./NavButton.astro";
       --size-900: 5rem;
     }
 
-    .primary-header {
-      padding-top: 1rem;
-    }
-
     .container {
       --clr-poco-blue: #0099ff;
-
       --max-width: 1110px;
-      --container-padding: 1rem;
-      width: min(var(--max-width), 100% - (var(--container-padding) * 2));
-      margin-inline: auto;
 
+      width: 100%;
+      margin-inline: auto;
       color: white;
       background: var(--clr-poco-blue);
       box-shadow: 0 3px 8px rgba(0, 0, 0, 0.25);
       padding: 0.5rem;
+      z-index: 1;
+      transition: all 100ms ease-in;
     }
 
     .nav-wrapper {
@@ -63,6 +59,7 @@ import NavButton from "./NavButton.astro";
         /* height: 100vh; */
         background-image: linear-gradient(rgb(0 0 0 / 0), rgb(0 0 0 / 0.8));
       }
+
       .primary-navigation {
         position: absolute;
         z-index: 1;

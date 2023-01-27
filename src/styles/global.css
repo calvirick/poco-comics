@@ -1,5 +1,5 @@
 :root {
-  --ff-primary: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+  --ff-primary: Segoe UI, sans-serif;
 
   --ff-body: var(--ff-primary);
   --ff-heading: var(--ff-primary);
@@ -30,7 +30,6 @@
 * {
   margin: 0;
   padding: 0;
-  font: inherit;
 }
 
 /* Remove list styles on ul, ol elements with a list role, which suggests default styling will be removed */

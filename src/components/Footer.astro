@@ -3,7 +3,8 @@ const today = new Date();
 ---
 
 <footer id='footer'>
-  COPYRIGHT &copy; {today.getFullYear()} ALEX WILKINS All rights reserved.
+  <a href='/'><img class='logo' src='/poco-logo.png' alt='poco logo' /></a>
+  &copy; {today.getFullYear()} Copyright Alex Wilkins. All rights reserved.
 </footer>
 
 <style lang='scss'>
@@ -16,5 +17,10 @@ const today = new Date();
     background-color: #222;
     padding: 1.5em;
     text-align: center;
+  }
+
+  .logo {
+    height: 5rem;
+    margin-inline: auto;
   }
 </style>

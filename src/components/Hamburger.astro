@@ -1,6 +1,6 @@
 <script>
   const primaryHeader = document.querySelector(".primary-header")!;
-  const navToggle = document.querySelector(".mobile-nav-toggle")!;
+  const navToggle = document.querySelector(".hamburger-button")!;
   const primaryNav = document.querySelector(".primary-navigation")!;
 
   navToggle.addEventListener("click", () => {
@@ -13,7 +13,7 @@
 </script>
 
 <button
-  class='mobile-nav-toggle'
+  class='hamburger-button'
   aria-controls='primary-navigation'
   aria-expanded='false'
 >
@@ -23,12 +23,12 @@
 </button>
 
 <style lang='scss'>
-  .mobile-nav-toggle {
+  .hamburger-button {
     display: none;
   }
 
   @media (max-width: 50em) {
-    .mobile-nav-toggle {
+    .hamburger-button {
       cursor: pointer;
       display: block;
       position: relative;
@@ -38,11 +38,11 @@
       cursor: pointer;
       border: 0;
       font-size: 2rem;
-      padding: 0.25rem 0.75rem;
+      padding: 0.5rem 0.75rem;
       border: solid 1px #222;
       border-radius: 5px;
       box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.25);
-      transition: all 100ms ease-out;
+      transition: all 100ms infinite;
       &:hover {
         transform: rotate(8deg);
       }
