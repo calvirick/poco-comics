@@ -5,6 +5,20 @@ import Header from "../components/Header.astro";
 
 <MainLayout>
   <Header />
-  <a href='/comic-pages/comic-1'>Comic #1</a>
-  <a href='/comic-pages/comic-2'>Comic #2</a>
+  <div class='wrapper'>
+    <h2>~ The Comics! 🙌🏻 ~</h2>
+    <a href='/comic-pages/comic-1'>Comic #1: Concussion</a>
+    <a href='/comic-pages/comic-2'>Comic #2: Cookies</a>
+  </div>
 </MainLayout>
+
+<style lang='scss'>
+  .wrapper {
+    margin-block: 2rem;
+    justify-content: center;
+    align-items: center;
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+  }
+</style>
