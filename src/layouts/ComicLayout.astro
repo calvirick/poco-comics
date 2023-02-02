@@ -1,8 +1,6 @@
 ---
 import MainLayout from "./MainLayout.astro";
-import Header from "../components/Header.astro";
 import Comic from "../components/Comic.astro";
-import Blog from "@components/Blog.astro";
 
 const { frontmatter } = Astro.props;
 ---
@@ -31,24 +29,27 @@ const { frontmatter } = Astro.props;
 </MainLayout>
 
 <style lang='scss'>
-  :root {
-    --container-width: 600px;
-  }
+  $containerWidth: 600px;
+  $avatarDimension: 120px;
+  $avatarColor: rgb(209, 209, 209);
+  $paragraphFontSize: 1rem;
+  $spaceBetween: 2em;
+
+  $containerWidthMobile: 328px;
 
   hr {
-    width: var(--container-width);
+    width: $containerWidth;
   }
 
   .blog-section {
-    margin-top: 52px;
     margin-inline: auto;
-    margin-bottom: 68px;
-    width: var(--container-width);
+    margin-block: 52px;
+    width: $containerWidth;
 
     .blog-container {
       display: flex;
-      gap: 2em;
-      padding-block: 2rem;
+      gap: $spaceBetween;
+      padding-block: $spaceBetween;
 
       .avatar-and-date {
         display: flex;
@@ -60,30 +61,24 @@ const { frontmatter } = Astro.props;
           opacity: 0.5;
         }
         .avatar {
-          --avatar-dimension: 120px;
-
-          background-color: rgb(181, 181, 181);
-          width: var(--avatar-dimension);
-          height: var(--avatar-dimension);
+          background-color: $avatarColor;
+          width: $avatarDimension;
+          height: $avatarDimension;
         }
       }
 
       .blog-content {
-        color: #222;
-        font-size: 1rem;
+        font-size: $paragraphFontSize;
       }
     }
   }
   @media (max-width: 50em) {
-    :root {
-      --container-width-mobile: 328px;
-    }
-
     hr {
-      width: var(--container-width-mobile);
+      width: $containerWidthMobile;
     }
     .blog-section {
-      width: var(--container-width-mobile);
+      width: $containerWidthMobile;
+
       .blog-container {
         flex-direction: column;
         align-items: center;
