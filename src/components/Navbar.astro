@@ -6,7 +6,9 @@ import NavButton from "./NavButton.astro";
 <header class='primary-header'>
   <div class='container'>
     <div class='nav-wrapper'>
-      <a href='/' class='logo'><img src='/poco-logo.png' alt='poco logo' /></a>
+      <a href='/' class='logo'
+        ><img src='/poco-navbar-logo.png' alt='poco logo' /></a
+      >
       <Hamburger />
       <nav class='primary-navigation' id='primary-navigation'>
         <ul aria-label='Primary' role='list' class='nav-list'>
@@ -47,6 +49,7 @@ import NavButton from "./NavButton.astro";
       display: flex;
       justify-content: space-between;
       align-items: center;
+      padding: 0.5rem;
     }
     @media (max-width: 50em) {
       .primary-header[data-overlay]::before {
@@ -91,7 +94,8 @@ import NavButton from "./NavButton.astro";
     }
 
     img {
-      min-width: 140px;
+      padding-block: 1rem;
+      height: 120px;
     }
 
     // mobile version
@@ -112,7 +116,6 @@ import NavButton from "./NavButton.astro";
       }
 
       img {
-        width: 2rem;
       }
     }
   </style>
